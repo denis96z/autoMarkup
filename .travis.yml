@@ -17,10 +17,14 @@ addons:
       - george-edison55-precise-backports
     packages:
       - g++-7
-      - cmake-data
       - cmake
+      - libblkid-dev
+      - e2fslibs-dev
+      - libboost-all-dev
+      - libaudit-dev
+
+language: cpp
 
 script:
   - CXX=/usr/bin/g++-7 CC=/usr/bin/gcc-7 cmake .
-  
-  - cmake --build . --target automarkup
+  - cmake --build .
